@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Projects</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body class="projects-page"></body>
+
+  <!-- ======= Navigation Bar ======= -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="About.html">Info</a></li>
+    </ul>
+  </nav>
+
+  <!-- ======= Page Header ======= -->
+  <h1>My Project Showcase</h1>
+
+  <!-- ===== 2025–2026 Section ===== -->
+  <section class="year">
+    <h2>2025–2026</h2>
+    <div class="projects">
+      <div class="project" onclick="openModal('proj1')">
+        <img src="images/project_1.jpg" alt="BeepBot">
+        <div class="project-info">
+          <h3>BeepBot</h3>
+          <p>A proximity-based alarm system that detects nearby objects using ultrasonic sensing and responds with visual and audio alerts.</p>
+        </div>
+      </div>
+
+      <div class="project" onclick="openModal('proj2')">
+        <img src="images/project_2.jpg" alt="The Blinker">
+        <div class="project-info">
+          <h3>The Blinker</h3>
+          <p>A microcontroller-based blinker system that controls LED on and off behavior using timed logic and digital outputs. The system demonstrates basic embedded control by translating programmed timing into reliable visual signaling. It provides a clear example of hardware and software working together in an embedded system.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 2024–2025 Section ===== -->
+  <section class="year">
+    <h2>2024–2025</h2>
+    <div class="projects">
+      <div class="project" onclick="openModal('proj3')">
+        <img src="images/the_last_flower.jpg" alt="The Last Flower">
+        <div class="project-info">
+          <h3>The Last Flower</h3>
+          <p>A narrative-driven Unreal Engine 5 game that combines dynamic environments, intelligent AI, and atmospheric design to create an immersive interactive experience.</p>
+        </div>
+      </div>
+      
+      
+      <div class="project" onclick="openModal('proj4')">
+        <img src="images/ColorBlind Exam.png" alt="Color Blind Exam">
+        <div class="project-info">
+          <h3>Color Blind Exam</h3>
+          <p>See the world through different eyes, explore how color blindness changes perception.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= Project Popups (Modals) ======= -->
+  <div id="proj1" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('proj1')">&times;</span>
+      <img src="images/project_1.jpg" alt="BeepBot">
+      <h2>BeepBot</h2>
+      <p>The purpose of this project is to design a simple yet effective proximity alarm using an Arduino microcontroller, an ultrasonic distance sensor, an LED, and a buzzer. The system works by measuring the distance between the sensor and a nearby object. When the object moves within a certain range, the LED lights up and the buzzer activates to signal that the object is too close. This project demonstrates basic principles of electronics, sensor integration, and microcontroller programming. To enhance functionality, the alarm could be expanded to include distance-based responses, such as varying buzzer tones or LED brightness depending on proximity.</p>
+    </div>
+  </div>
+
+ <div id="proj2" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('proj2')">&times;</span>
+
+    <img src="images/project_2.jpg" alt="The Blinker">
+    <h2>The Blinker</h2>
+
+    <p>
+      The purpose of this project is to design a reliable LED blinker system using an Arduino microcontroller and discrete electronic components. The Arduino is connected to the LED through appropriate circuitry and programmed to control precise on and off timing using embedded delay logic. This project demonstrates core principles of microcontroller I/O control, hardware–software integration, and basic embedded system design, and it can be extended to support adjustable blink rates or external input control.
+    </p>
+
+    <!-- Subheader for videos -->
+    <h3 class="video-section-title">
+      Project Demonstration Videos / Design Process (double-click to view properly)
+    </h3>
+
+    <div class="video-card">
+      <video controls>
+        <source src="video/IMG_2519 (1).mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Stage 2: Code debugging and LED integration</p>
+    </div>
+    <div class="video-card">
+      <video controls>
+        <source src="video/IMG_2433.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p>Stage 2: Code debugging and LED integration</p>
+    </div>
+
+    <div class="image-card">
+        <img src="images/IMG_2512.jpg" alt="Blinker wiring">
+    </div>
+
+
+  </div>
+</div>
+  <div id="proj3" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('proj3')">&times;</span>
+      
+      <h2>The Last Flower</h2>
+      <p>The Last Flower is a 3D narrative game developed in Unreal Engine 5 with gameplay systems programmed in C++. The project emphasizes environmental storytelling and player immersion through dynamic worldbuilding. I created a responsive weather system with rain, lightning, and falling leaves, developed AI with chase and flying behaviors, and designed the title screen and pause/play menus for smooth, intuitive interaction. Visual assets were refined in Photoshop to maintain a consistent aesthetic. The game was successfully demoed and published, showcasing teamwork, technical skill, and project completion.</p>
+      <h3 class="video-section-title">
+      Project Demonstration Videos (double-click to view properly)
+      </h3>
+      
+        <div class="video-gallery">
+      <div class="video-card">
+        <video controls>
+          <source src="video/Untitled video (1).mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Stage 1: Sensor wiring and setup</p>
+      </div>
+
+      <div class="video-card">
+        <video controls>
+          <source src="video/Untitled video (2).mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Stage 2: Code debugging and LED integration</p>
+      </div>
+
+      <div class="video-card">
+        <video controls>
+          <source src="video/Untitled video (3).mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p>Stage 3: Final demo and assembly</p>
+      </div>
+    </div>
+
+    </div>
+  </div>
+  <div id="proj4" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('proj4')">&times;</span>
+    <img src="images/Screenshot 2025-10-19 010959.png" alt="ColorBlind Exam" class="clickable-img" onclick="openImageModal(this.src)">
+    <img src="images/Screenshot 2025-10-19 011417.png" alt="ColorBlind Exam" class="clickable-img small-img" onclick="openImageModal(this.src)">
+    <h2>ColorBlind Exam</h2>
+    <p>
+      This project was my first coding experience using Python. I developed a program to simulate and test color blindness, allowing users to explore how different color vision deficiencies affect perception. Through this project, I applied basic programming concepts such as variables, loops, conditional statements, and user input handling. Completing it helped me build foundational coding skills, practice logical problem-solving, and gain confidence in writing and debugging Python code.
+    </p>
+  </div>
+</div>
+<div id="imageModal" class="modal">
+  <span class="close" onclick="closeModal('imageModal')">&times;</span>
+  <img class="modal-content" id="expandedImage">
+</div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = 'flex';
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+    function openImageModal(src) {
+    const modal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('expandedImage');
+    modal.style.display = 'block';
+    modalImg.src = src;
+    }
+
+  </script>
+<body class="projects-page"></body>
+</html>
