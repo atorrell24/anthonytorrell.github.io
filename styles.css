@@ -659,28 +659,53 @@ nav a:focus {
 }
 
 @media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;   /* stack buttons */
-    gap: 10px;                
-    width: 90%;               
+     h1 {
+    position: static;        /* lets it flow naturally */
+    transform: none;        
+    font-size: 2rem;        
+    margin: 20px 0;          
+    }
+  
+    nav ul {
+    flex-direction: column;  /* vertical stack */
+    gap: 10px;               /* small spacing */
+    width: 90%;              /* fit screen */
     margin: 0 auto;
     padding: 10px 0;
   }
 
   nav ul li {
-    display: block;          
+    display: block;
     text-align: center;
   }
 
   nav ul li a {
-    padding: 12px 0;          
-    font-size: 1.2rem;
-    width: 100%;              
+    width: 100%;             /* fill button area */
+    padding: 12px 0;         /* bigger touch target */
+    font-size: 1.2rem;       /* readable font size */
   }
+
+  nav {
+    position: relative;      /* avoid overlap issues */
+  }
+
+   .footer {
+    position: static;
+    padding: 20px 0;
+  }
+
 }
+
 @media (max-width: 600px) {
   .footer {
     position: static;
     padding: 20px 0;
   }
+  h1 {
+    position: static;   /* let it flow naturally */
+    transform: none;    /* remove crazy translate */
+    font-size: 2rem;    /* smaller for mobile */
+    margin: 20px 0;     /* spacing from nav */
+  }
 }
+
