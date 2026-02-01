@@ -11,22 +11,21 @@
 
 
 </head>
-<body class="projects-page"></body>
-
-  <!-- ======= Navigation Bar ======= -->
-  <div class="nav-container">
-      <div class="hamburger" onclick="toggleMenu()">☰</div>
-      <nav class="nav-menu">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Projects.html" class="active">Projects</a></li>
-            <li><a href="About.html">About</a></li>
-          </ul>
-    </nav>
+<body class="projects-page">
+    <div class="nav-container">
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav class="nav-menu">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="Projects.html" class="active">Projects</a></li>
+              <li><a href="About.html">About</a></li>
+            </ul>
+      </nav>
   </div>
 
   <!-- ======= Page Header ======= -->
   <h1>My Project Showcase</h1>
+</div>
 
   <!-- ===== 2025–2026 Section ===== -->
   <section class="year">
@@ -188,6 +187,7 @@
     modal.style.display = 'block';
     modalImg.src = src;
     }
+    
     function toggleMenu() {
     const menu = document.querySelector('.nav-menu');
     if (!menu) return; // safety for pages missing nav
