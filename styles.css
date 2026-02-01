@@ -27,6 +27,13 @@ body.Home {
     color: azure;
     min-height: 100vh;
 }
+@media (max-width: 600px) {
+    body.Home {
+        background-position: bottom right; /* shifts the image */
+        background-size: cover; /* still cover the whole screen */
+    }
+}
+
 
 
 body.projects-page {
