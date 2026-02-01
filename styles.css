@@ -117,7 +117,7 @@ nav ul li a.active {
 }
 @media (max-width: 600px) {
     body.Home h1 {
-    left: 15px; 
+    left: 30px; 
     transform: none; 
     text-align: left;
     position: relative; 
@@ -146,6 +146,15 @@ nav ul li a.active {
         padding: 10px;
         border-radius: 5px;
     }
+    .projects-page .nav-menu ul {
+        flex-direction: column; /* vertical menu */
+        gap: 5px; /* same spacing as other pages */
+        margin: 0;
+        padding: 0;
+    }
+
+
+
 
      .nav-menu {
         display: none;   /* hidden initially on mobile */
@@ -165,7 +174,7 @@ nav ul li a.active {
         gap: 5px;
         padding: 0;
         margin:0;
-        
+
     }
 
     .nav-menu ul li a {
