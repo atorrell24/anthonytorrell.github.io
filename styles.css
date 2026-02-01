@@ -611,66 +611,84 @@ nav a:focus {
   background-color: #555;
 }
 
+
+/* ================= Mobile Optimizations ================= */
 @media (max-width: 600px) {
-  /* ===== H1 ===== */
+
+  /* ===== H1 / Name ===== */
   h1 {
-    position: static;       /* natural flow */
-    transform: none;        /* remove big translate */
-    font-size: 1.8rem;      /* smaller heading */
-    margin: 15px 0;         /* less spacing */
+    position: static;          /* let it flow naturally */
+    transform: none;           /* remove huge translate */
+    font-size: 1.8rem;         /* smaller on mobile */
+    margin: 10px 0 15px 0;     /* spacing above/below */
+    text-align: center;        /* center horizontally */
+    line-height: 1.2;          /* tighter spacing */
   }
 
-  /* ===== NAV ===== */
+  /* ===== NAVIGATION ===== */
+  nav {
+    position: relative;        /* avoid overlap */
+    z-index: 1000;
+  }
+
   nav ul {
-    flex-direction: column;  /* stack vertically */
-    gap: 8px;                /* smaller spacing */
-    width: 95%;              /* fit screen nicely */
+    flex-direction: row;       /* horizontal nav */
+    flex-wrap: wrap;           /* wrap if needed */
+    justify-content: center;   /* center nav links */
+    gap: 12px;                 /* smaller spacing */
+    width: 95%;                /* fit screen */
     margin: 0 auto;
     padding: 5px 0;
   }
 
   nav ul li {
-    display: block;
+    display: inline-block;
     text-align: center;
   }
 
   nav ul li a {
-    width: 100%;             /* fill container */
-    padding: 8px 0;          /* smaller touch area */
-    font-size: 1rem;         /* reduce font size */
+    width: auto;               /* do not stretch links */
+    padding: 8px 12px;         /* touch-friendly but compact */
+    font-size: 1rem;           /* readable */
   }
 
-  nav {
-    position: relative;      /* avoid overlap */
-  }
-
-  /* ===== HERO IMAGE & HOME CONTAINER ===== */
+  /* ===== HOMEPAGE HERO / CONTAINER ===== */
   .home-container, .hero {
     width: 95%;
     margin: 0 auto;
-    padding: 15px 5px;       /* smaller padding */
+    padding: 15px 5px;        /* smaller padding for mobile */
     text-align: center;
   }
 
   .hero img {
-    width: 100%;
+    width: 100%;              /* scale image to screen */
     height: auto;
   }
 
-  /* ===== PARAGRAPHS & HEADINGS ===== */
+  /* ===== BACKGROUND IMAGE ===== */
+  body.Home {
+    background-size: cover;       /* fill screen */
+    background-position: center;  /* center image */
+    background-repeat: no-repeat; /* no tiling */
+  }
+
+  /* ===== HEADINGS & TEXT ===== */
   h2 {
-    font-size: 1.3rem;       /* smaller headings */
+    font-size: 1.3rem;
   }
 
   p {
-    font-size: 0.9rem;       /* smaller text */
+    font-size: 0.9rem;
   }
 
   /* ===== FOOTER ===== */
   .footer {
-    position: static;
+    position: static;       /* normal flow */
+    width: 100%;
     padding: 15px 0;
-    font-size: 0.85rem;      /* slightly smaller */
+    text-align: center;
+    box-sizing: border-box;
+    font-size: 0.85rem;    /* smaller font on mobile */
   }
 }
 
