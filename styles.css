@@ -612,66 +612,21 @@ nav a:focus {
 }
 
 @media (max-width: 600px) {
-  nav {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav a {
-    width: 90%;
-    margin: 5px 0;
-    font-size: 1.1rem;
-  }
-
-  /* Homepage adjustments */
-  .home-container {
-    width: 90%;
-    margin: 0 auto;
-    padding: 10px;
-  }
-
-  .hero img {
-    width: 100%;
-    height: auto;
-  }
-
-  .hero, .home-section {
-    padding: 20px;
-    text-align: center;
-  }
-
-  h1, h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-}
-
-@media (max-width: 600px) {
+  /* ===== H1 ===== */
   h1 {
-    position: static;        /* lets it flow naturally */
-    transform: none;        
-    font-size: 2rem;        
-    margin: 20px 0;          
+    position: static;       /* natural flow */
+    transform: none;        /* remove big translate */
+    font-size: 1.8rem;      /* smaller heading */
+    margin: 15px 0;         /* less spacing */
   }
-}
 
-@media (max-width: 600px) {
-     h1 {
-    position: static;        /* lets it flow naturally */
-    transform: none;        
-    font-size: 2rem;        
-    margin: 20px 0;          
-    }
-  
-    nav ul {
-    flex-direction: column;  /* vertical stack */
-    gap: 10px;               /* small spacing */
-    width: 90%;              /* fit screen */
+  /* ===== NAV ===== */
+  nav ul {
+    flex-direction: column;  /* stack vertically */
+    gap: 8px;                /* smaller spacing */
+    width: 95%;              /* fit screen nicely */
     margin: 0 auto;
-    padding: 10px 0;
+    padding: 5px 0;
   }
 
   nav ul li {
@@ -680,32 +635,43 @@ nav a:focus {
   }
 
   nav ul li a {
-    width: 100%;             /* fill button area */
-    padding: 12px 0;         /* bigger touch target */
-    font-size: 1.2rem;       /* readable font size */
+    width: 100%;             /* fill container */
+    padding: 8px 0;          /* smaller touch area */
+    font-size: 1rem;         /* reduce font size */
   }
 
   nav {
-    position: relative;      /* avoid overlap issues */
+    position: relative;      /* avoid overlap */
   }
 
-   .footer {
-    position: static;
-    padding: 20px 0;
+  /* ===== HERO IMAGE & HOME CONTAINER ===== */
+  .home-container, .hero {
+    width: 95%;
+    margin: 0 auto;
+    padding: 15px 5px;       /* smaller padding */
+    text-align: center;
   }
 
-}
+  .hero img {
+    width: 100%;
+    height: auto;
+  }
 
-@media (max-width: 600px) {
+  /* ===== PARAGRAPHS & HEADINGS ===== */
+  h2 {
+    font-size: 1.3rem;       /* smaller headings */
+  }
+
+  p {
+    font-size: 0.9rem;       /* smaller text */
+  }
+
+  /* ===== FOOTER ===== */
   .footer {
     position: static;
-    padding: 20px 0;
-  }
-  h1 {
-    position: static;   /* let it flow naturally */
-    transform: none;    /* remove crazy translate */
-    font-size: 2rem;    /* smaller for mobile */
-    margin: 20px 0;     /* spacing from nav */
+    padding: 15px 0;
+    font-size: 0.85rem;      /* slightly smaller */
   }
 }
+
 
