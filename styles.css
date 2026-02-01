@@ -40,6 +40,19 @@
             display: inline;
             
         }
+        /* CSS for navigation */
+        nav {
+        display: flex;
+        flex-wrap: wrap; 
+        justify-content: space-around; /* spaces items evenly */
+        }
+
+        nav a {
+        padding: 10px 15px; /* bigger touch targets */
+        font-size: 1rem;
+        text-align: center;
+        }
+
         nav ul li a {
             text-decoration: none; /* Remove underline */
             color: white; /* Ensure white text */
