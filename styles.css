@@ -116,6 +116,14 @@ nav ul li a.active {
     display: none;  /* hide on desktop */
 }
 @media (max-width: 600px) {
+    body.Home h1 {
+    left: 15px; 
+    transform: none; 
+    text-align: left;
+    position: relative; 
+    }
+    
+    
     .hamburger {
         display: block;
         position: absolute;
@@ -154,8 +162,10 @@ nav ul li a.active {
 
     .nav-menu ul {
         flex-direction: column;
-        gap: 10px;
+        gap: 5px;
         padding: 0;
+        margin:0;
+        
     }
 
     .nav-menu ul li a {
