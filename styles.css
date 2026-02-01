@@ -5,15 +5,29 @@ body {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* keeps h1 above nav, centered */
+}
+
+
+body.Home h1 {
+    margin: 20px 0 10px; /* space above nav */
+    padding: 110px;
+    padding-right: 20px;
+}
+
 
 body.Home {
     background-image: url('images/the_last_flower.jpg');
     background-size: cover;
-    background-position: center;
+    background-position:center;
     background-repeat: no-repeat;
     color: azure;
     min-height: 100vh;
 }
+
 
 body.projects-page {
     background-color: rgb(226, 225, 224);
@@ -34,6 +48,7 @@ h1 {
     font-weight: 200;
     font-size: 2.5em;
     margin: 0;
+    
 }
 
 h2 {
@@ -47,7 +62,7 @@ nav {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: #333;
+    background-color: transparent;
     z-index: 1000;
     text-align: center;
     position: relative;
@@ -58,7 +73,7 @@ nav ul {
     display: flex;
     gap: 175px;
     margin: 0;
-    padding: 20px 0;
+    padding:40px 0;
     justify-content: center;
     width: 100%;
 }
@@ -69,6 +84,7 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
+    font-size: larger;
     color: white;
     padding: 10px 20px;
     border: 2px solid transparent;
@@ -118,45 +134,346 @@ nav ul li a.active {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 0.5rem;
 }
+
+
+
 
 /* ================= PAGE-SPECIFIC ================= */
-.projects-page nav ul {
-    color: black;
+
+
+body.projects-page{
+            background-color:rgb(226, 225, 224);
+            background-image: none;
+        }
+        /* ======= NAVIGATION ======= */
+        .projects-page nav ul {
+            
+           list-style: none;
+            display: flex;
+            gap: 175px;
+            margin: 0;
+            padding:40px 0;
+            justify-content: center;
+            width: 100%;/* ensures nav stays on top of other elements */
+        }
+
+        .projects-page nav ul li {
+        display: inline;
+        }
+
+        .projects-page nav ul li a {
+        text-decoration: none;
+        color: black;
+        padding: 10px 20px;
+        border: 1px solid transparent;
+        transition: all 0.3s ease-in-out;
+        }
+
+        .projects-page nav ul li a:hover {
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        }
+
+        .projects-page nav ul li a.active {
+        color: black;
+        border-bottom: 1px solid black;
+        }
+
+        /* ======= PAGE HEADERS ======= */
+        .projects-page h1 {
+        
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 200;
+            font-size: 2.5em;
+            margin: 0;
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            transform: translate(-50%, -389%);
+            margin-top: 120px;
+        }
+
+        /* ======= YEAR SECTIONS ======= */
+        .projects-page section.year {
+        margin: 60px auto;
+        max-width: 900px;
+        padding: 20px;
+        font-family: 'Courier New', Courier, monospace;
+        
+        }
+
+        .projects-page h2 {
+        border-bottom: 2px solid #888; /*border under the year on project page */
+        padding-bottom: 10px;
+        font-size: 1.8em;
+        }
+
+        /* ======= PROJECT GRID ======= */
+        .projects-page .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 100px;
+            margin-top: 20px;
+            }
+
+        .projects-page .project {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+            }
+
+        .projects-page .project:hover {
+            transform: scale(1.03);
+            border-color: gray;
+            }
+
+        .projects-page .project img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            }
+
+        .projects-page .project-info {
+            padding: 15px;
+            
+            }
+
+        .projects-page .project-info h3 {
+            margin: 0;
+            font-size: 1.3em;
+            }
+
+        .projects-page .project-info p {
+            font-size: 0.9em;
+            color: #131313;
+            }
+
+            /* ======= MODAL POPUP ======= */
+        .projects-page .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            }
+
+        .projects-page .modal-content {
+            background: #111;
+            color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            max-width: 350px;
+            text-align: center;
+            position: relative;
+            }
+            
+            
+        .projects-page .modal-content img {
+            width: 90%;
+            max-height: 300px;         /* limits how tall it can get */
+            object-fit: cover;  
+            border-radius: 10px;
+            margin-bottom: 15px;
+            }
+
+        .projects-page .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1.5em;
+            cursor: pointer;
+            color: #aaa;
+            }
+
+        .projects-page .close:hover {
+            color: white;
+            }
+
+        .projects-page.clickable-img {
+        cursor: pointer;
+        width: 200px; /* adjust size as needed */
+        margin: 10px 0;
+        }
+
+        .clickable-img {
+  cursor: pointer;
+  width: 200px; /* default for first image */
+  margin: 10px 0;
 }
 
-.projects-page nav ul li a {
-    color: black;
+.small-img {
+  width: 150px; /* smaller size for second image */
 }
 
-.projects-page nav ul li a:hover {
+/* Modal styling */
+.projects-page .modal {
+  display: none; 
+  position: fixed; 
+  z-index: 1000; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.8);
+}
+.projects-page .modal-content img {
+  max-width: 50vh;  /* limits image width to 90% of viewport */
+  max-height: 25vh; /* limits image height to 80% of viewport */
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.projects-page .modal-content {
+  display: block;
+  margin: 5% auto; 
+  max-width: 85%;
+}
+
+.projects-page .modal .close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.projects-page .footer {
+  position: static;
+}
+
+
+.video-gallery {
+  display: flex;
+  gap: 30.5rem;
+  flex-wrap: wrap;
+}
+.video-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+.video-card img {
+  image-rendering: auto; /* default */
+  image-rendering: crisp-edges; /* can improve some cases */
+}
+
+.video-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+  padding: 3px;
+  text-align: center;
+  display: inline-block;
+  width: 120px;
+  height: 90px;
+  overflow: hidden;
+  transition: transform 0.1s ease, border-color 0.3s ease;
+}
+
+.video-card:hover {
+  transform: scale(1.05);
+  border-color: gray;
+}
+
+.video-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  border-radius: 5px;
+}
+
+
+
+/* ================= ABOUT PAGE ================= */
+
+body.about {
+    background-color: rgb(235, 234, 234);
+    background-image:none;
+    background-size: cover;          /* fills screen */
+    background-position: center;     /* center the image */
+    background-repeat: no-repeat;    /* no tiling */
+    min-height: 100vh;               /* ensure it fills viewport */
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* NAVIGATION */
+
+
+.about nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: transparent;
+    z-index: 1000;
+    text-align: center;
+    position: relative;
+}
+
+.about nav ul li {
+    display: inline;
+}
+
+.about nav ul li a {
+    text-decoration: none;
+    color: #111111 !important; /* force dark color */
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    transition: all 0.3s ease-in-out;
+    position: relative; /* ensures link sits above nav background */
+}
+
+.about nav ul li a:hover {
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
 }
 
-.projects-page nav ul li a.active {
+.about nav ul li a.active {
+    color: #0b0a0a;
     border-bottom: 1px solid black;
 }
 
-/* ================= ABOUT PAGE ================= */
-.about nav ul {
-    gap: 175px;
-}
-
-.about nav ul li a {
-    color: #111 !important;
-}
-
+/* About Section Container */
 .about-section {
-    padding: 100px 20px 80px;
+    padding: 20px 20px 80px; /* top padding avoids nav overlap */
+    background-color: transparent;
+}
+
+.about-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .about-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px;
+    align-items: center;
     justify-content: center;
-    text-align: left;
+    gap: 40px;
+    text-align: left; /* left-align text for readability */
+    background-color: transparent;
+}
+
+/* Headshot */
+.about-image {
+    flex: 1 1 300px;
+    text-align: center;
 }
 
 .about-image img {
@@ -168,7 +485,13 @@ nav ul li a.active {
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
+/* About Text Content */
+.about-text {
+    flex: 2 1 500px;
+}
+
 .about-text h2 {
+    font-family: 'Courier New', Courier, monospace;
     font-size: 28px;
     margin-bottom: 20px;
     line-height: 1.4;
@@ -181,68 +504,92 @@ nav ul li a.active {
     line-height: 1.6;
 }
 
-/* ================= MOBILE FIXES ================= */
-@media (max-width: 600px) {
-
-    /* Body background */
-    body.Home {
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    /* H1 / Name */
-    h1 {
-        position: static !important;
-        transform: none !important;
-        font-size: 1.6rem;
-        margin: 15px 0;
-        text-align: center;
-        line-height: 1.2;
-    }
-
-    /* Nav horizontal */
-    nav ul {
-        flex-direction: row !important;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
-        width: 100%;
-        padding: 5px 0;
-    }
-
-    nav ul li a {
-        padding: 8px 12px;
-        font-size: 1rem;
-    }
-
-    /* Hero / container adjustments */
-    .home-container, .hero {
-        width: 95%;
-        margin: 0 auto;
-        padding: 15px 5px;
-        text-align: center;
-    }
-
-    .hero img {
-        width: 100%;
-        height: auto;
-    }
-
-    h2 {
-        font-size: 1.3rem;
-    }
-
-    p {
-        font-size: 0.9rem;
-    }
-
-    /* Footer */
-    .footer {
-        position: static !important;
-        width: 100%;
-        text-align: center;
-        padding: 15px 0;
-        font-size: 0.85rem;
-    }
+/* Skills List */
+.skills-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
 }
+
+.skills-list li {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+/* ===== Resume / Professional Links ===== */
+.resume-section {
+  margin-top: 40px;
+}
+
+.resume-section h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #0c4875;
+}
+
+.resume-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.resume-links a {
+  text-decoration: none;
+  font-weight: bold;
+  color: #05396d;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+.resume-links a:hover {
+  border-bottom: 2px solid #05396d;
+  color: #032b52;
+}
+
+/* Resume button */
+.resume-button {
+  padding: 10px 18px;
+  background-color: #05396d;
+  color: white !important;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.resume-button:hover {
+  background-color: #325a82;
+  transform: translateY(-2px);
+}
+.resume-links i {
+  margin-right: 8px;
+  font-size: 1.1em;
+}
+
+
+/* Proof / Experience */
+.proof p {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+/* Call to Action */
+.cta-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #05396d;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #325a82;
+    transform: translateY(-2px);
+}
+
+
+
+
+
