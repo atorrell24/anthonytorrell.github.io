@@ -11,22 +11,30 @@
 
 </head>
 <body class="Home">
-    <div class="header-container">
-    <nav>
+  <div class="header-container">
+    <!-- Hamburger + Navigation -->
+    <div class="nav-container">
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <nav class="nav-menu">
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Projects.html">Projects</a></li>
-            <li><a href="About.html">About</a></li>
-            
-    </nav>
-    
-    <h1>Anthony Torrell</h1>
-    
-
+          <li><a href="index.html">Home</a></li>
+          <li><a href="Projects.html">Projects</a></li>
+          <li><a href="About.html">About</a></li>
+        </ul>
+      </nav>
     </div>
 
-    
-    
-</body>
-</html>
+    <!-- Page Title -->
+    <h1>Anthony Torrell</h1>
+  </div>
 
+  <!-- Other page content goes here -->
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('.nav-menu');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+</body>
+</html> 

@@ -29,8 +29,8 @@ body.Home {
 }
 @media (max-width: 600px) {
     body.Home {
-        background-position: bottom right; /* shifts the image */
-        background-size: cover; /* still cover the whole screen */
+        background-position: bottom right; 
+        background-size: cover; 
     }
 }
 
@@ -65,6 +65,11 @@ h2 {
 }
 
 /* ================= NAVIGATION ================= */
+.nav-menu ul {
+    display: flex;
+    gap: 175px;
+}
+
 nav {
     display: flex;
     flex-wrap: wrap;
@@ -106,6 +111,64 @@ nav ul li a:hover {
 nav ul li a.active {
     border-bottom: 1px solid black;
 }
+
+.hamburger {
+    display: none;  /* hide on desktop */
+}
+@media (max-width: 600px) {
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 2rem;
+        cursor: pointer;
+        color: white; /* or black depending on page */
+        z-index: 1001; /*
+
+
+    .nav-menu {
+        display: none; /* hide by default */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: rgba(0,0,0,0.9);
+        width: 200px;
+        text-align: right;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+     .nav-menu {
+        display: none;   /* hidden initially on mobile */
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+        flex-direction: column;
+        background-color: rgba(0,0,0,0.9);
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        gap: 10px;
+        padding: 0;
+    }
+
+    .nav-menu ul li a {
+        display: block;
+        color: white;
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+}
+
+
+
+
 
 /* ================= CONTACT INFO ================= */
 .contact-info {
@@ -199,7 +262,7 @@ body.projects-page{
             top: 15%;
             left: 50%;
             transform: translate(-50%, -389%);
-            margin-top: 120px;
+            margin-top: 170px;
         }
 
         /* ======= YEAR SECTIONS ======= */
