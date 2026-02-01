@@ -190,6 +190,7 @@
     }
     function toggleMenu() {
     const menu = document.querySelector('.nav-menu');
+    if (!menu) return; // safety for pages missing nav
     if (menu.style.display === 'block') {
         menu.style.display = 'none';
     } else {
