@@ -20,7 +20,7 @@ body.Home h1 {
 
 
 body.Home {
-    background-image: url('images/the_last_flower.jpg');
+    background-image: url('images/the_last_flower.png');
     background-size: cover;
     background-position:center;
     background-repeat: no-repeat;
@@ -96,8 +96,8 @@ nav ul li {
 
 nav ul li a {
     text-decoration: none;
-    font-size: larger;
-    color: white;
+    font-size: x-large;
+    color: #fae09d;
     padding: 10px 20px;
     border: 2px solid transparent;
     transition: all 0.3s ease-in-out;
@@ -179,7 +179,7 @@ nav ul li a.active {
 
     .nav-menu ul li a {
         display: block;
-        color: white;
+        color: #fae09d;
         font-size: 1.2rem;
         padding: 10px;
     }
@@ -233,7 +233,7 @@ nav ul li a.active {
 
 
 body.projects-page{
-            background-color:rgb(226, 225, 224);
+            background-color:rgb(148, 148, 148);
             background-image: none;
         }
         /* ======= NAVIGATION ======= */
@@ -491,7 +491,7 @@ body.projects-page{
 /* ================= ABOUT PAGE ================= */
 
 body.about {
-    background-color: rgb(235, 234, 234);
+    background-color:rgb(148, 148, 148);
     background-image:none;
     background-size: cover;          /* fills screen */
     background-position: center;     /* center the image */
